@@ -3,7 +3,7 @@ DIR_PWD=$(pwd)
 
 # step2: get sources and header files.
 # git
-DIR_INC=$(git ls-files | grep ".*\.h" | sed 's/\/.*\.h$/\//' | uniq | sed 's/^/-I.\//' | sed 'N;s/\n/ /')
+DIR_INC=$(git ls-files | grep ".*\.h" | sed 's/\/[^\/]*\.h//' | uniq | sed 's/^/-I.\//' | sed ':goto;N;s/\n/ /;bgoto;')
 #DIR_SRC=$(git ls-files | grep "\.*c")
 DIR_SRC=$(git ls-files | grep ".*\.c" | sed 's/^/.\//')
 # find is not supported now.
