@@ -1,5 +1,5 @@
 # step1: get pwd.
-DIR_PWD=$(pwd)
+DIR_PWD=$(pwd -P)
 
 # step2: get sources and header files.
 # git
