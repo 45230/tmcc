@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # step1: get pwd.
 DIR_PWD=$(pwd -P)
 
