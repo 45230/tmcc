@@ -13,7 +13,7 @@ DIR_SRC=$(git ls-files | grep ".*\.c$" | sed 's/^/.\//')
 echo '[' > compile_commands.json
 for src in $DIR_SRC
 do
-    echo -e "{\n  \"directory\": \"$DIR_PWD\",\n  \"command\": \"$DIR_INC -c $src\",\n  \"file\": \"$src\"\n}," >> compile_commands.json
+    echo -e "{\n  \"directory\": \"$DIR_PWD\",\n  \"command\": \"/usr/bin/cc $DIR_INC -c $src\",\n  \"file\": \"$src\"\n}," >> compile_commands.json
 done
 sed -i '$ s/},/}/' compile_commands.json
 echo ']' >> compile_commands.json
